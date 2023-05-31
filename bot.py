@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 user_id_to_currencies = UsersIdCurrencies()
 
 
-TOKEN = os.getenv('TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 KEYBOARD = [
     ['/add_currency', '/currency_rates'],
@@ -162,7 +162,7 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     """Запускает бота."""
 
-    application = ApplicationBuilder().token(TOKEN).build()
+    application = ApplicationBuilder().token(BOT_TOKEN).build()
 
     application.add_handlers(
         [
